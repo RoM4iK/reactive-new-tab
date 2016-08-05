@@ -1,0 +1,15 @@
+$enable-flex: true;
+
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss';
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss';
+@import 'colors.scss';
+@import 'helpers.scss';
+@import 'components/navigation.scss';
+@import 'components/background.scss';
+@import 'components/home.scss';
+
+body {
+  font-family: 'Roboto';
+  font-size: 20px;
+  color: #fff;
+}

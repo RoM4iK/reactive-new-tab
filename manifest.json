@@ -1,0 +1,13 @@
+{
+  "name": "Materialized new tab",
+  "description": "Customizible new tab extension",
+  "version": "0.0.1",
+  "incognito": "split",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": [
+    "history"
+  ],
+  "manifest_version": 2
+}

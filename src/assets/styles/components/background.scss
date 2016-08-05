@@ -1,0 +1,13 @@
+#background {
+  position: fixed;
+  background-size: cover;
+  z-index: -5;
+  &:after {
+    z-index: -5;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0, 0.50);
+  }
+}

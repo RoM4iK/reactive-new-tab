@@ -1,0 +1,9 @@
+.navigation {
+  display: flex;
+  padding: 10px 0;
+  height: 10%;
+  &_item {
+    margin: 10px 20px;
+    @extend .main-link;
+  }
+}

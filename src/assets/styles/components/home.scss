@@ -1,0 +1,12 @@
+.home {
+  display: flex;
+  height: 90%;
+  align-items: center;
+  justify-content: center;
+  .time {
+    font-size: 60px;
+    .day {
+      text-align: center;
+    }
+  }
+}

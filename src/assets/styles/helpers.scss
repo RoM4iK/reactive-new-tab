@@ -1,0 +1,11 @@
+.cp {
+  cursor: pointer;
+}
+
+.main-link {
+  color: $text-on-main;
+  &:hover {
+    color: $text-on-main-hover;
+    transition: color 0.4s;
+  }
+}
