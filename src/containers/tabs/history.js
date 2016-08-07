@@ -1,28 +1,36 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import _ from 'lodash'
 
 import { HistoryList } from 'components'
-import { fetchHistory } from 'actions/historyActions'
+import { fetch } from 'actions/historyActions'
 
 
 export default class History extends Component{
   render() {
-    let { fetchHistory, history } = this.props
+    let { fetch, history, addItem } = this.props
     return (
       <div className="history">
-        <HistoryList fetchHistory={fetchHistory} history={history}/>
+          <HistoryList fetch={fetch} history={history} addItem={addItem}/>
       </div>
     )
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return nextProps.history != this.props.history
   }
 }
 
 History.propTypes = {
   history: PropTypes.array,
-  fetchHistory: PropTypes.func.isRequired
+  fetch: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
   let history = state.getIn(['history', 'history'])
+  if (history) {
+    history = history.toJS()
+  }
   return {
     history
   }
@@ -30,8 +38,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchHistory: () => {
-      dispatch(fetchHistory())
+    fetch: () => {
+      dispatch(fetch())
     }
   }
 }

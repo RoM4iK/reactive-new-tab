@@ -8,7 +8,7 @@ export default (state = null, action) => {
   }
   switch (action.type) {
     case UPDATE_HISTORY:
-      return state.set('history', action.history)
+      return state.set('history', Immutable.fromJS(action.history))
     default:
       return state
   }

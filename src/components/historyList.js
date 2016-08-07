@@ -19,24 +19,30 @@ class HistoryList extends Component{
   }
 
   subscribeOnHistoryUpdate() {
-    // TODO: replace this handler with single adding
-    chrome.history.onVisited.addListener(this.fetchHistory.bind(this))
+    chrome.history.onVisited.addListener(this.fetch.bind(this))
   }
 
-  fetchHistory() {
-    this.props.fetchHistory()
+  fetch() {
+    this.props.fetch()
   }
 
   componentWillMount() {
     this.subscribeOnHistoryUpdate()
-    this.fetchHistory()
+    this.fetch()
+  }
+
+  shouldComponentUpdate(nextProps) {
+    console.log(nextProps.history)
+    console.log(this.props.history)
+    console.log(nextProps.history != this.props.history)
+    return nextProps.history != this.props.history
   }
 }
 
 
 HistoryList.propTypes = {
   time: PropTypes.array,
-  fetchHistory: PropTypes.func.isRequired
+  fetch: PropTypes.func.isRequired
 }
 
 export default HistoryList
