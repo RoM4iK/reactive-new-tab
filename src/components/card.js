@@ -12,7 +12,7 @@ class Card extends Component{
       <a target="_blank" className={cardClasses} href={href} title={title}>
         <div className="content">
           <h6 className="title">
-            {title || 'No title'}
+            <img src={`chrome://favicon/${href}`}/> {title || 'No title'}
           </h6>
         </div>
       </a>

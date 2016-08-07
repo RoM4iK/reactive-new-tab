@@ -1,13 +1,15 @@
 {
-  "name": "Materialized new tab",
-  "description": "Customizible new tab extension",
-  "version": "0.0.1",
+  "name": "Reactive new tab",
+  "description": "Customizible extension for \"New Tab\" page",
+  "version": "1.0.0",
   "incognito": "split",
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
   "permissions": [
-    "history"
+    "history",
+    "bookmarks",
+    "chrome://favicon/"
   ],
   "manifest_version": 2
 }

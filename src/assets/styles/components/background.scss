@@ -1,5 +1,6 @@
 #background {
   @extend .fixed-fullscreen;
+  background-color: #1976D2;
   background-size: cover;
   z-index: -5;
   &:after {

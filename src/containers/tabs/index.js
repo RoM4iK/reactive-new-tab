@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-import History from './history'
+import Bookmarks from './bookmarks'
 import Mail from './mail'
 import Home from './home'
 import Options from './options'
@@ -11,8 +11,8 @@ let tabs = [
     component: Home
   },
   {
-    name: 'History',
-    component: History
+    name: 'Bookmarks',
+    component: Bookmarks
   },
   {
     name: 'Mail',

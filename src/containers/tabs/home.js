@@ -22,9 +22,8 @@ Home.propTypes = {
 }
 
 const mapStateToProps = (state) => {
-  let time = state.getIn(['home', 'time'])
   return {
-    time
+    time: state.getIn(['home', 'time'])
   }
 }
 
