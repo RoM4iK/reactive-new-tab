@@ -14,9 +14,9 @@ class Navigation extends Component{
 
   renderItem(item) {
     return (
-      <div className="navigation_item cp" key={item.id} onClick={this.select.bind(this, item)}>
+      <h5 className="item cp" key={item.id} onClick={this.select.bind(this, item)}>
         {item.name}
-      </div>
+      </h5>
     )
   }
   select(tab) {

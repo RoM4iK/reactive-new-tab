@@ -1,8 +1,9 @@
 .navigation {
+  position: relative;
+  z-index: 5;
   display: flex;
   padding: 10px 0;
-  height: 10%;
-  &_item {
+  .item {
     margin: 10px 20px;
     @extend .main-link;
   }

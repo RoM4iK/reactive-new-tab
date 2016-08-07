@@ -1,10 +1,12 @@
 import React, { Component, PropTypes } from 'react'
 
+import { Card } from 'components'
+
 class HistoryList extends Component{
   render() {
     let { history } = this.props
     return history ? (
-      <div className="items-container">
+      <div className="items row">
           {history.map(this.renderItem)}
       </div>
     ) : null
@@ -12,9 +14,7 @@ class HistoryList extends Component{
 
   renderItem(item) {
     return(
-      <div className="item" key={item.id}>
-          <a href={item.url} target="_blank" title={item.title}>{item.title}</a>
-      </div>
+      <Card className="item col-xs-12" key={item.id} href={item.url} title={item.title} />
     )
   }
 

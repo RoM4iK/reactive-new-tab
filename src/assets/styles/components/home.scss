@@ -1,6 +1,6 @@
 .home {
+  @extend .fixed-fullscreen;
   display: flex;
-  height: 90%;
   align-items: center;
   justify-content: center;
   .time {

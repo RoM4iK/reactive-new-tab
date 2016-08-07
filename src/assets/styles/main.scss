@@ -4,12 +4,14 @@ $enable-flex: true;
 @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss';
 @import 'colors.scss';
 @import 'helpers.scss';
+@import 'typography.scss';
 @import 'components/navigation.scss';
 @import 'components/background.scss';
 @import 'components/home.scss';
+@import 'components/history.scss';
+@import 'components/card.scss';
 
 body {
   font-family: 'Roboto';
-  font-size: 20px;
   color: #fff;
 }

@@ -10,7 +10,7 @@ export default class History extends Component{
   render() {
     let { fetch, history, addItem } = this.props
     return (
-      <div className="history">
+      <div className="history container-fluid">
           <HistoryList fetch={fetch} history={history} addItem={addItem}/>
       </div>
     )

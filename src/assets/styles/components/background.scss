@@ -1,5 +1,5 @@
 #background {
-  position: fixed;
+  @extend .fixed-fullscreen;
   background-size: cover;
   z-index: -5;
   &:after {
