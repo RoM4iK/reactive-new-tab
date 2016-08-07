@@ -13,12 +13,21 @@ class Time extends Component{
   }
 
 
-  // TODO: create descructor for this event
-  initializeTimer() {
-    setTimeout(() => {
-      setInterval(this.updateTime.bind(this), 60000)
+  createTimer() {
+    this.timerTimeout = setTimeout(() => {
+      this.timerTimeout = undefined
+      this.timer = setInterval(this.updateTime.bind(this), 60000)
       this.updateTime()
     }, this.timeToNextMinute())
+  }
+
+  destroyTimer() {
+    if (this.timerTimeout) {
+      clearTimeout(this.timerTimeout)
+    }
+    else {
+      clearInterval(this.timer)
+    }
   }
 
   timeToNextMinute() {
@@ -31,8 +40,12 @@ class Time extends Component{
   }
 
   componentWillMount() {
-    this.initializeTimer()
+    this.createTimer()
     this.updateTime()
+  }
+
+  componentWillUnmount() {
+    this.destroyTimer()
   }
 }
 

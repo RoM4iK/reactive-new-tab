@@ -19,11 +19,20 @@ class HistoryList extends Component{
   }
 
   subscribeOnHistoryUpdate() {
-    chrome.history.onVisited.addListener(this.fetch.bind(this))
+    this.bindedFetch = this.fetch.bind(this)
+    chrome.history.onVisited.addListener(this.bindedFetch)
+  }
+
+  unSubscribeOnHistoryUpdate() {
+    chrome.history.onVisited.removeListener(this.bindedFetch)
   }
 
   fetch() {
     this.props.fetch()
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return nextProps.history != this.props.history
   }
 
   componentWillMount() {
@@ -31,14 +40,11 @@ class HistoryList extends Component{
     this.fetch()
   }
 
-  shouldComponentUpdate(nextProps) {
-    console.log(nextProps.history)
-    console.log(this.props.history)
-    console.log(nextProps.history != this.props.history)
-    return nextProps.history != this.props.history
+  componentWillUnmount() {
+    this.unSubscribeOnHistoryUpdate()
   }
-}
 
+}
 
 HistoryList.propTypes = {
   time: PropTypes.array,
