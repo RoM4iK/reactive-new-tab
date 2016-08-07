@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux-immutable'
 
-import homeReducer from './homeReducer'
+import home from './homeReducer'
+import history from './historyReducer'
 
 const rootReducer = combineReducers({
-  homeReducer,
+  home,
+  history
 })
 
 export default rootReducer

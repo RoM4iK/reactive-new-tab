@@ -12,6 +12,8 @@ class Time extends Component{
     )
   }
 
+
+  // TODO: create descructor for this event
   initializeTimer() {
     setTimeout(() => {
       setInterval(this.updateTime.bind(this), 60000)
