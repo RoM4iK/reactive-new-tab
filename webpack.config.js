@@ -1,4 +1,3 @@
-var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require('path');
 
@@ -42,9 +41,9 @@ module.exports = {
     },
     plugins: [
       new CopyWebpackPlugin([
-        { from: 'assets/index.html' },
-        { from: 'manifest.json' }
-      ])
+        { from: './src/assets/index.html' },
+        { from: './manifest.json' }
+      ], {copyUnmodified: true})
     ],
     resolve: {
       root: path.resolve('./src'),
