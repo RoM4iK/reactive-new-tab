@@ -6,7 +6,6 @@ var path = require('path');
 module.exports = {
     entry: {
       "bundle": "app.js",
-      // "bundle.min": "app.js",
     },
     devtool: 'source-map',
     output: {
@@ -42,10 +41,6 @@ module.exports = {
       ]
     },
     plugins: [
-      new webpack.optimize.UglifyJsPlugin({
-        include: /\.min\.js$/,
-        minimize: true
-      }),
       new CopyWebpackPlugin([
         { from: 'assets/index.html' },
         { from: 'manifest.json' }

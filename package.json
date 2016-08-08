@@ -3,7 +3,9 @@
   "description": "Customizible extension for Chrome \"New Tab\" page",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors"
+
   },
   "author": "",
   "license": "ISC",
@@ -27,7 +29,7 @@
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
     "redux-thunk": "^2.1.0",
-    "roboto-fontface": "^0.5.0",
+    "roboto-fontface": "rom4ik/roboto-fontface-bower#develop",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
