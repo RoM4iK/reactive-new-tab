@@ -11,7 +11,7 @@ export function updateHistory(history) {
 
 export function fetchHistory() {
   return function (dispatch) {
-    return chrome.history.search({text: ''}, (history) => {
+    return chrome.history.search({text: '', maxResults: 200}, (history) => {
       dispatch(updateHistory(history))
     })
   }

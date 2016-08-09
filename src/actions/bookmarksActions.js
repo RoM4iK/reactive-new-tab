@@ -9,14 +9,20 @@ export function updateBookmarks(bookmarks) {
 }
 
 export function filterRecentBookmarks(bookmarks, history) {
+  history = history.toJS()
   let recentBookmarks =  _
     .chain(bookmarks.toJS())
-    .filter((item) => {
-     return history.toJS().some((historyItem) => {
-       return historyItem.url == item.url
-     })
-    })
+    .filter((item) =>
+      history.some((historyItem) =>
+        historyItem.url == item.url
+      )
+    )
     .take(10)
+    .sortBy((item) =>
+      _.findIndex(history, (historyItem) => {
+        return historyItem.url == item.url
+      })
+    )
     .value()
 
   return {

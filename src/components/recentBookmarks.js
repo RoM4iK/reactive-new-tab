@@ -5,21 +5,28 @@ import { Card } from 'components'
 
 class RecentBookmarks extends Component{
   render() {
+    let { recentBookmarks } = this.props
+    if (!recentBookmarks) {
+      return null
+    }
+    recentBookmarks = recentBookmarks.toJS()
+    if (recentBookmarks.lentgh == 0) {
+      return null
+    }
     return (
       <div className="recent-bookmarks">
         <h3 className="tac">Recently visited bookmarks</h3>
-        {this.renderList()}
+        {this.renderList(recentBookmarks)}
       </div>
     )
   }
 
-  renderList() {
-    let { recentBookmarks } = this.props
-    return recentBookmarks ? (
+  renderList(items) {
+    return (
       <div className="items row">
-          {recentBookmarks.toJS().map(this.renderItem)}
+        {items.map(this.renderItem)}
       </div>
-    ) : null
+    )
   }
 
   renderItem(item) {
