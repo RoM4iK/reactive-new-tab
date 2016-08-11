@@ -1,7 +1,7 @@
 {
   "name": "Reactive new tab",
   "description": "Customizible extension for \"New Tab\" page",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "incognito": "split",
   "chrome_url_overrides": {
     "newtab": "index.html"
