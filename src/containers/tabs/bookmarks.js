@@ -26,7 +26,7 @@ export default class Bookmarks extends Component{
   }
 
   subscribeBookmarksUpdate() {
-    this.bindedFetch = this.fetchBookmarks.bind(this)
+    this.bindedFetch = this.props.fetchBookmarks.bind(this)
     chrome.bookmarks.onCreated.addListener(this.bindedFetch)
     chrome.bookmarks.onRemoved.addListener(this.bindedFetch)
     chrome.bookmarks.onChanged.addListener(this.bindedFetch)
