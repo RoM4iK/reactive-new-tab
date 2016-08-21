@@ -5,7 +5,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors"
-
   },
   "author": "",
   "license": "ISC",
@@ -34,5 +33,9 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.3.1",
+    "eslint-plugin-react": "^6.1.2"
   }
 }
