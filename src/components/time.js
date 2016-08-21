@@ -7,7 +7,7 @@ class Time extends Component{
     return time && (
       <div className="time">
         <div className="day">{time.format('dddd')}</div>
-        <div className="date">{time.format('Do MMMM, hh:mm')}</div>
+        <div className="date">{time.format('Do MMMM, HH:mm')}</div>
       </div>
     )
   }

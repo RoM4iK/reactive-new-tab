@@ -38,13 +38,9 @@ export default class Bookmarks extends Component{
     chrome.bookmarks.onChanged.removeListener(this.bindedFetch)
   }
 
-  fetchBookmarks() {
-    this.props.fetchBookmarks()
-  }
-
   componentWillMount() {
+    this.props.fetchBookmarks()
     this.subscribeBookmarksUpdate()
-    this.fetchBookmarks()
   }
 
   componentWillUnmount() {
