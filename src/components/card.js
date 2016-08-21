@@ -9,7 +9,7 @@ class Card extends Component{
       className
     )
     return (
-      <a target="_blank" className={cardClasses} href={href} title={title}>
+      <a className={cardClasses} href={href} title={title}>
         <div className="content">
           <h6 className="title">
             <img src={`chrome://favicon/${href}`}/> {title || 'No title'}
