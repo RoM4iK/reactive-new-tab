@@ -2,7 +2,7 @@ import _ from 'lodash'
 
 import Bookmarks from './bookmarks'
 import Home from './home'
-import Options from './options'
+import Settings from './settings'
 
 let tabs = [
   {
@@ -13,10 +13,10 @@ let tabs = [
     name: 'Bookmarks',
     component: Bookmarks
   },
-  // {
-  //   name: 'Options',
-  //   component: Options
-  // }
+  {
+    name: 'Settings',
+    component: Settings
+  }
 ]
 
 export default tabs.map(
