@@ -1,10 +1,10 @@
 {
   "name": "reactive-new-tab",
   "description": "Customizible extension for Chrome \"New Tab\" page",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
+    "build": "webpack --config ./webpack.production.config.js --progress --profile --colors",
     "build-zip": "npm run build && npm run zip && npm run clean",
     "zip": "zip -r build.zip build",
     "clean": "rm -rf ./build"
