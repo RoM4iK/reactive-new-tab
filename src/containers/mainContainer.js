@@ -1,9 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
 
 import { Navigation, Background } from 'components'
 import tabs from 'containers/tabs'
+import { fetchSettings } from 'actions/settingsActions'
 
-export default class MainContainer extends Component{
+
+class MainContainer extends Component{
   constructor(props) {
     super(props)
     this.state = {
@@ -12,11 +15,12 @@ export default class MainContainer extends Component{
   }
 
   render() {
+    let { settings } = this.props
     let SelectedTab = this.selectedTabComponent()
     return (
       <div className="main-container">
         <Navigation tabs={tabs} onSelect={this.selectTab.bind(this)}/>
-        <Background />
+        <Background backgroundColor={settings && settings.get('backgroundColor')}/>
         {SelectedTab && <SelectedTab/>}
       </div>
     )
@@ -34,4 +38,32 @@ export default class MainContainer extends Component{
     return tabs.length && this.selectedTab().component
   }
 
+  componentWillMount() {
+    this.props.fetchSettings()
+  }
+
 }
+
+MainContainer.propTypes = {
+  settings: PropTypes.object,
+  fetchSettings: PropTypes.func.isRequired
+}
+
+const mapStateToProps = (state) => {
+  return {
+    settings: state.getIn(['settings', 'settings'])
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchSettings: () => {
+      dispatch(fetchSettings())
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MainContainer)

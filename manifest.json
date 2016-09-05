@@ -9,7 +9,8 @@
   "permissions": [
     "history",
     "bookmarks",
-    "chrome://favicon/"
+    "chrome://favicon/",
+    "storage"
   ],
   "manifest_version": 2
 }
