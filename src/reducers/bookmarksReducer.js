@@ -2,10 +2,7 @@ import Immutable from 'immutable'
 
 import { UPDATE_RECENT_BOOKMARKS, UPDATE_BOOKMARKS } from 'actions/bookmarksActions'
 
-export default (state = null, action) => {
-  if (state === null) {
-    state = new Immutable.Map
-  }
+export default (state = new Immutable.Map, action) => {
   switch (action.type) {
   case UPDATE_BOOKMARKS:
     return state.set('bookmarks', Immutable.fromJS(action.bookmarks))

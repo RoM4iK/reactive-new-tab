@@ -32,7 +32,7 @@ class Settings extends Component{
 }
 
 Settings.propTypes = {
-  settings: PropTypes.instanceOf(Immutable.Map),
+  settings: PropTypes.instanceOf(Immutable.Map).isRequired,
   saveSettingsDelayed: PropTypes.func.isRequired
 }
 

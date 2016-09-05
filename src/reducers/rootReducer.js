@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux-immutable'
+import Immutable from 'immutable'
 
 import home from './homeReducer'
 import history from './historyReducer'
 import bookmarks from './bookmarksReducer'
-import settings from './settingsReducer'
+import settings, { initialState as settingsState } from './settingsReducer'
 
 const rootReducer = combineReducers({
   home,
@@ -13,3 +14,7 @@ const rootReducer = combineReducers({
 })
 
 export default rootReducer
+
+export const initialState = Immutable.fromJS({
+  settings: settingsState
+})
