@@ -7,13 +7,13 @@ import { fetchHistory } from 'actions/historyActions'
 import { fetchBookmarks, filterRecentBookmarks } from 'actions/bookmarksActions'
 
 
-export default class Bookmarks extends Component{
+class Bookmarks extends Component{
   render() {
     let {
       fetchHistory, recentBookmarks, bookmarks, history, filterRecentBookmarks
     } = this.props
     return (
-      <div className="history container-fluid">
+      <div className="history">
           <RecentBookmarks
             bookmarks={bookmarks}
             history={history}

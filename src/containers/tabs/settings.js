@@ -10,10 +10,8 @@ class Settings extends Component{
   render() {
     return (
       <div className="settings">
-        <div className="container-fluid">
-          <h1>Settings</h1>
-          {this.props.settings && this.renderSettingsComponents()}
-        </div>
+        <h1>Settings</h1>
+        {this.props.settings && this.renderSettingsComponents()}
       </div>
     )
   }

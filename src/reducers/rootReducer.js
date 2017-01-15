@@ -13,8 +13,8 @@ const rootReducer = combineReducers({
   settings
 })
 
-export default rootReducer
-
 export const initialState = Immutable.fromJS({
   settings: settingsState
 })
+
+export default rootReducer

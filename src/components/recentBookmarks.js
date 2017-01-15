@@ -31,7 +31,7 @@ class RecentBookmarks extends Component{
 
   renderItem(item) {
     return(
-      <Card className="item col-xs-12" key={item.id} href={item.url} title={item.title} />
+      <Card className="item" key={item.id} href={item.url} title={item.title} />
     )
   }
 
