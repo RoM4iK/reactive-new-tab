@@ -18,7 +18,7 @@ class MainContainer extends Component{
     let { settings } = this.props
     let SelectedTab = this.selectedTabComponent()
     return (
-      <div className="main-container">
+      <div className="main-container" style={this.getStyles()}>
         <Navigation tabs={tabs} onSelect={this.selectTab.bind(this)}/>
         <Background settings={settings}/>
         {SelectedTab && <SelectedTab/>}
@@ -36,6 +36,13 @@ class MainContainer extends Component{
 
   selectedTabComponent() {
     return tabs.length && this.selectedTab().component
+  }
+
+  getStyles() {
+    let { settings } = this.props
+    return settings ? {
+      color: settings.get('fontColor')
+    } : {}
   }
 
   componentWillMount() {
