@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 
-// import sampleBg from 'assets/img/example-bg.jpg'
-
 class Background extends Component{
   render() {
     let styles = {
@@ -19,10 +17,10 @@ class Background extends Component{
 
 Background.propTypes = {
   backgroundColor: PropTypes.string,
-  top: PropTypes.number,
-  right: PropTypes.number,
-  bottom: PropTypes.number,
-  left: PropTypes.number
+  topOffset: PropTypes.number,
+  rightOffset: PropTypes.number,
+  bottomOffset: PropTypes.number,
+  leftOffset: PropTypes.number
 }
 
 

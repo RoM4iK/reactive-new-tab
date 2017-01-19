@@ -12,5 +12,5 @@ export default (state = new Immutable.Map, action) => {
 }
 
 export const initialState = Immutable.fromJS({
-  settings: {backgroundColor: '#0D47A1'}
+  settings: {}
 })
