@@ -4,7 +4,7 @@ import Immutable from 'immutable'
 
 
 import { saveSettingsDelayed } from 'actions/settingsActions'
-import { Background, FontColor } from 'components/settings'
+import { BackgroundImage, TextSetting } from 'components/settings'
 
 class Settings extends Component{
   render() {
@@ -18,10 +18,15 @@ class Settings extends Component{
 
   renderSettingsComponents() {
     let { settings } = this.props
+    let childProps = {
+      settings: settings,
+      updateSettings: this.updateSettings.bind(this)
+    }
     return (
       <div>
-        <FontColor settings={settings} updateSettings={this.updateSettings.bind(this)} />
-        <Background settings={settings} updateSettings={this.updateSettings.bind(this)} />
+        <TextSetting {...childProps} shortName="fontColor" name="Font color" />
+        <TextSetting {...childProps} shortName="backgroundColor" name="Background color" />
+        <BackgroundImage {...childProps}/>
       </div>
     )
   }
