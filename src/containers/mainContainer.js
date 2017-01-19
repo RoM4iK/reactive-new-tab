@@ -20,7 +20,7 @@ class MainContainer extends Component{
     return (
       <div className="main-container">
         <Navigation tabs={tabs} onSelect={this.selectTab.bind(this)}/>
-        <Background backgroundColor={settings && settings.get('backgroundColor')}/>
+        <Background settings={settings}/>
         {SelectedTab && <SelectedTab/>}
       </div>
     )
